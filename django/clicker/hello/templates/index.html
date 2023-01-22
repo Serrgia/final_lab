@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MOLL</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>Hello SOLOVEY! THIS IS WEB-PYTHON</h2>
+	{% if id == 0 %}
+	<P>CHOOSE REPORT TYPE:</P>
+	{% endif %}
+	<button onclick="location.href='/1'">SKLAD</button>
+		<button onclick="location.href='/2'">CUSTOMERS</button>
+		<button onclick="location.href='/0'">Clear REPORT</button>
+	
+    
+			{% if id == 1 %}
+		 {% if prod %}
+		 	<h2>products list</h2>
+    <table>
+        <thead><th>Id</th><th>Name</th><th>Quantity in SKLAD</th></thead>
+        {% for p in prod %}
+        <tr>
+            <td>{{ p.0 }}</td>
+            <td>{{ p.1 }}</td>
+            <td>{{ p.2 }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+	{% endif %}
+	{% if id == 2 %}
+		 {% if cus %}
+		 	<h2>customers list</h2>
+    <table>
+        <thead><th>Id</th><th>Surname</th><th>Forename</th><th>Address</th></thead>
+        {% for c in cus %}
+        <tr>
+            <td>{{ c.0 }}</td>
+            <td>{{ c.1 }}</td>
+            <td>{{ c.2 }}</td>
+			<td>{{ c.3 }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+	{% endif %}
+		
+</body>
+</html>
