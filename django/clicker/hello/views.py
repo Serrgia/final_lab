@@ -8,7 +8,7 @@ import mysql.connector as mariadb
 #from .models import customer
   
 def index(request,id = 0):
-    connection = mariadb.connect(user = 'user', password = '1234qweR', database = 'mysql', host = '127.0.0.1', port = '3306')
+    connection = mariadb.connect(user = 'user', password = '1234qweR', database = 'mysql', host = '192.168.100.48', port = '3306')
    
     print(id)
     if id==1:
